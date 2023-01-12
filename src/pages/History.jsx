@@ -1,20 +1,23 @@
 import { useState, useEffect } from 'react';
 import Card from '../components/views/Card';
 import { getHistory } from '../components/forms/functions';
+import { useSelector } from 'react-redux';
+import { setHistory } from '../redux/counter';
 
 export default function History() {
-	const [history, setHistory] = useState([]);
+	const history = useSelector(state => state.counter.history);
 
 	useEffect(() => {
-		async function updateHistory() {
+		(async function () {
+			if (!history || history.length > 0) return;
+			console.log('Fetching history');
 			const data = await getHistory();
 			setHistory(data);
-		}
-		updateHistory();
+		})();
 	}, []);
 
 	return (
-		<div className="flex flex-col flex-wrap justify-center items-center px-2 py-8 gap-10 w-full">
+		<div className="flex flex-col flex-wrap justify-center items-center px-2 py-8 gap-10 w-full bg-movie-night bg-contain bg-no-repeat min-h-screen bg-origin-padding">
 			{history.length &&
 				history.map((data, index) => {
 					return <Card key={index} data={data} />;

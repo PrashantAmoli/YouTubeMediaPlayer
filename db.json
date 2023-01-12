@@ -1,203 +1,203 @@
 {
-	"_buckets": [
-		{
-			"id": 1,
-			"name": "Redux Toolkit"
-		},
-		{
-			"id": 2,
-			"name": "Namaste JS"
-		},
-		{
-			"id": 3,
-			"name": "JSON Server"
-		}
-	],
-	"_videos": [
-		{
-			"id": 1,
-			"bucket": "Namaste JS",
-			"videoId": "pN6jk0uUrD8",
-			"title": "Namaste JavaScript Course - Tutorial",
-			"link": "https://www.youtube-nocookie.com/embed/pN6jk0uUrD8",
-			"type": "video/youtube"
-		},
-		{
-			"id": 2,
-			"bucket": "Namaste JS",
-			"videoId": "ZvbzSrg0afE",
-			"title": "How JS works & Execution Context",
-			"link": "https://www.youtube-nocookie.com/embed/ZvbzSrg0afE",
-			"type": "video/youtube"
-		},
-		{
-			"id": 3,
-			"bucket": "Namaste JS",
-			"videoId": "iLWTnMzWtj4",
-			"title": "How JS is executed? & Callstack",
-			"link": "https://www.youtube-nocookie.com/embed/iLWTnMzWtj4",
-			"type": "video/youtube"
-		},
-		{
-			"id": 4,
-			"bucket": "Namaste JS",
-			"videoId": "Fnlnw8uY6jo",
-			"title": "Hoisting in JS",
-			"link": "https://www.youtube-nocookie.com/embed/Fnlnw8uY6jo",
-			"type": "video/youtube"
-		},
-		{
-			"id": 5,
-			"bucket": "Namaste JS",
-			"videoId": "gSDncyuGw0s",
-			"title": "How functions work & Variable Environment",
-			"link": "https://www.youtube-nocookie.com/embed/gSDncyuGw0s",
-			"type": "video/youtube"
-		},
-		{
-			"id": 6,
-			"bucket": "Namaste JS",
-			"videoId": "QCRpVw2KXf8",
-			"title": "Shortest JS program | window & this keyword",
-			"link": "https://www.youtube-nocookie.com/embed/QCRpVw2KXf8",
-			"type": "video/youtube"
-		},
-		{
-			"id": 7,
-			"bucket": "Namaste JS",
-			"videoId": "Fnlnw8uY6jo",
-			"title": "Hoisting in JS",
-			"link": "https://www.youtube-nocookie.com/embed/Fnlnw8uY6jo",
-			"type": "video/youtube"
-		},
-		{
-			"id": 8,
-			"bucket": "Namaste JS",
-			"videoId": "gSDncyuGw0s",
-			"title": "How functions work & Variable Environment",
-			"link": "https://www.youtube-nocookie.com/embed/gSDncyuGw0s",
-			"type": "video/youtube"
-		},
-		{
-			"id": 9,
-			"bucket": "Namaste JS",
-			"videoId": "QCRpVw2KXf8",
-			"title": "Shortest JS code | window & this keyword",
-			"link": "https://www.youtube-nocookie.com/embed/QCRpVw2KXf8",
-			"type": "video/youtube"
-		},
-		{
-			"id": 11,
-			"bucket": "JSON Server",
-			"videoId": "_1kNqAybxW0",
-			"title": "Introduction to JSON Server",
-			"link": "https://www.youtube-nocookie.com/embed/_1kNqAybxW0",
-			"type": "video/youtube"
-		},
-		{
-			"id": 12,
-			"bucket": "JSON Server",
-			"videoId": "T51O_jyFbVs",
-			"title": "Get Request",
-			"link": "https://www.youtube-nocookie.com/embed/T51O_jyFbVs",
-			"type": "video/youtube"
-		},
-		{
-			"id": 13,
-			"bucket": "JSON Server",
-			"videoId": "VarSBarGl7o",
-			"title": "Filtering",
-			"link": "https://www.youtube-nocookie.com/embed/VarSBarGl7o",
-			"type": "video/youtube"
-		},
-		{
-			"id": 14,
-			"bucket": "Redux Toolkit",
-			"videoId": "0awA5Uw6SJE",
-			"title": "Intro to Redux",
-			"link": "https://www.youtube-nocookie.com/embed/0awA5Uw6SJE",
-			"type": "video/youtube"
-		},
-		{
-			"id": 15,
-			"bucket": "Redux Toolkit",
-			"videoId": "ZySFOgejw0k",
-			"title": "Getting Started",
-			"link": "https://www.youtube-nocookie.com/embed/ZySFOgejw0k",
-			"type": "video/youtube"
-		},
-		{
-			"id": 16,
-			"bucket": "Redux Toolkit",
-			"videoId": "7cREd9mesMg",
-			"title": "Three Core Concepts",
-			"link": "https://www.youtube-nocookie.com/embed/7cREd9mesMg",
-			"type": "video/youtube"
-		}
-	],
-	"_history": [
-		{
-			"id": 1,
-			"videoId": "gSDncyuGw0s",
-			"bucket": "Namaste JS",
-			"timestamp": 1673538330004,
-			"title": "How functions work & Variable Environment",
-			"link": "https://www.youtube-nocookie.com/embed/gSDncyuGw0s",
-			"type": "video/youtube"
-		},
-		{
-			"id": 2,
-			"videoId": "0awA5Uw6SJE",
-			"bucket": "Redux Toolkit",
-			"timestamp": 1673538337504,
-			"title": "Intro to Redux",
-			"link": "https://www.youtube-nocookie.com/embed/0awA5Uw6SJE",
-			"type": "video/youtube"
-		},
-		{
-			"id": 3,
-			"videoId": "ZySFOgejw0k",
-			"bucket": "Redux Toolkit",
-			"timestamp": 1620000000,
-			"title": "Getting Started",
-			"link": "https://www.youtube-nocookie.com/embed/ZySFOgejw0k",
-			"type": "video/youtube"
-		},
-		{
-			"id": 65,
-			"videoId": "gSDncyuGw0s",
-			"bucket": "Namaste JS",
-			"timestamp": 1673538330004,
-			"title": "How functions work & Variable Environment",
-			"link": "https://www.youtube-nocookie.com/embed/gSDncyuGw0s",
-			"type": "video/youtube"
-		},
-		{
-			"id": 62,
-			"videoId": "0awA5Uw6SJE",
-			"bucket": "Redux Toolkit",
-			"timestamp": 1673538337504,
-			"title": "Intro to Redux",
-			"link": "https://www.youtube-nocookie.com/embed/0awA5Uw6SJE",
-			"type": "video/youtube"
-		},
-		{
-			"id": 55,
-			"videoId": "ZySFOgejw0k",
-			"bucket": "Redux Toolkit",
-			"timestamp": 1620000000,
-			"title": "Getting Started",
-			"link": "https://www.youtube-nocookie.com/embed/ZySFOgejw0k",
-			"type": "video/youtube"
-		},
-		{
-			"id": 49,
-			"videoId": "QCRpVw2KXf8",
-			"bucket": "Namaste JS",
-			"timestamp": 1620000000,
-			"title": "Shortest JS code | window & this keyword",
-			"link": "https://www.youtube-nocookie.com/embed/QCRpVw2KXf8",
-			"type": "video/youtube"
-		}
-	]
+  "_buckets": [
+    {
+      "id": 1,
+      "name": "Redux Toolkit"
+    },
+    {
+      "id": 2,
+      "name": "Namaste JS"
+    },
+    {
+      "id": 3,
+      "name": "JSON Server"
+    }
+  ],
+  "_videos": [
+    {
+      "id": 1,
+      "bucket": "Namaste JS",
+      "videoId": "pN6jk0uUrD8",
+      "title": "Namaste JavaScript Course - Tutorial",
+      "link": "https://www.youtube-nocookie.com/embed/pN6jk0uUrD8",
+      "type": "video/youtube"
+    },
+    {
+      "id": 2,
+      "bucket": "Namaste JS",
+      "videoId": "ZvbzSrg0afE",
+      "title": "How JS works & Execution Context",
+      "link": "https://www.youtube-nocookie.com/embed/ZvbzSrg0afE",
+      "type": "video/youtube"
+    },
+    {
+      "id": 3,
+      "bucket": "Namaste JS",
+      "videoId": "iLWTnMzWtj4",
+      "title": "How JS is executed? & Callstack",
+      "link": "https://www.youtube-nocookie.com/embed/iLWTnMzWtj4",
+      "type": "video/youtube"
+    },
+    {
+      "id": 4,
+      "bucket": "Namaste JS",
+      "videoId": "Fnlnw8uY6jo",
+      "title": "Hoisting in JS",
+      "link": "https://www.youtube-nocookie.com/embed/Fnlnw8uY6jo",
+      "type": "video/youtube"
+    },
+    {
+      "id": 5,
+      "bucket": "Namaste JS",
+      "videoId": "gSDncyuGw0s",
+      "title": "How functions work & Variable Environment",
+      "link": "https://www.youtube-nocookie.com/embed/gSDncyuGw0s",
+      "type": "video/youtube"
+    },
+    {
+      "id": 6,
+      "bucket": "Namaste JS",
+      "videoId": "QCRpVw2KXf8",
+      "title": "Shortest JS program | window & this keyword",
+      "link": "https://www.youtube-nocookie.com/embed/QCRpVw2KXf8",
+      "type": "video/youtube"
+    },
+    {
+      "id": 7,
+      "bucket": "Namaste JS",
+      "videoId": "Fnlnw8uY6jo",
+      "title": "Hoisting in JS",
+      "link": "https://www.youtube-nocookie.com/embed/Fnlnw8uY6jo",
+      "type": "video/youtube"
+    },
+    {
+      "id": 8,
+      "bucket": "Namaste JS",
+      "videoId": "gSDncyuGw0s",
+      "title": "How functions work & Variable Environment",
+      "link": "https://www.youtube-nocookie.com/embed/gSDncyuGw0s",
+      "type": "video/youtube"
+    },
+    {
+      "id": 9,
+      "bucket": "Namaste JS",
+      "videoId": "QCRpVw2KXf8",
+      "title": "Shortest JS code | window & this keyword",
+      "link": "https://www.youtube-nocookie.com/embed/QCRpVw2KXf8",
+      "type": "video/youtube"
+    },
+    {
+      "id": 11,
+      "bucket": "JSON Server",
+      "videoId": "_1kNqAybxW0",
+      "title": "Introduction to JSON Server",
+      "link": "https://www.youtube-nocookie.com/embed/_1kNqAybxW0",
+      "type": "video/youtube"
+    },
+    {
+      "id": 12,
+      "bucket": "JSON Server",
+      "videoId": "T51O_jyFbVs",
+      "title": "Get Request",
+      "link": "https://www.youtube-nocookie.com/embed/T51O_jyFbVs",
+      "type": "video/youtube"
+    },
+    {
+      "id": 13,
+      "bucket": "JSON Server",
+      "videoId": "VarSBarGl7o",
+      "title": "Filtering",
+      "link": "https://www.youtube-nocookie.com/embed/VarSBarGl7o",
+      "type": "video/youtube"
+    },
+    {
+      "id": 14,
+      "bucket": "Redux Toolkit",
+      "videoId": "0awA5Uw6SJE",
+      "title": "Intro to Redux",
+      "link": "https://www.youtube-nocookie.com/embed/0awA5Uw6SJE",
+      "type": "video/youtube"
+    },
+    {
+      "id": 15,
+      "bucket": "Redux Toolkit",
+      "videoId": "ZySFOgejw0k",
+      "title": "Getting Started",
+      "link": "https://www.youtube-nocookie.com/embed/ZySFOgejw0k",
+      "type": "video/youtube"
+    },
+    {
+      "id": 16,
+      "bucket": "Redux Toolkit",
+      "videoId": "7cREd9mesMg",
+      "title": "Three Core Concepts",
+      "link": "https://www.youtube-nocookie.com/embed/7cREd9mesMg",
+      "type": "video/youtube"
+    }
+  ],
+  "_history": [
+    {
+      "id": 1,
+      "videoId": "gSDncyuGw0s",
+      "bucket": "Namaste JS",
+      "timestamp": 1673538330004,
+      "title": "How functions work & Variable Environment",
+      "link": "https://www.youtube-nocookie.com/embed/gSDncyuGw0s",
+      "type": "video/youtube"
+    },
+    {
+      "id": 2,
+      "videoId": "0awA5Uw6SJE",
+      "bucket": "Redux Toolkit",
+      "timestamp": 1673538337504,
+      "title": "Intro to Redux",
+      "link": "https://www.youtube-nocookie.com/embed/0awA5Uw6SJE",
+      "type": "video/youtube"
+    },
+    {
+      "id": 3,
+      "videoId": "ZySFOgejw0k",
+      "bucket": "Redux Toolkit",
+      "timestamp": 1620000000,
+      "title": "Getting Started",
+      "link": "https://www.youtube-nocookie.com/embed/ZySFOgejw0k",
+      "type": "video/youtube"
+    },
+    {
+      "id": 65,
+      "videoId": "gSDncyuGw0s",
+      "bucket": "Namaste JS",
+      "timestamp": 1673538330004,
+      "title": "How functions work & Variable Environment",
+      "link": "https://www.youtube-nocookie.com/embed/gSDncyuGw0s",
+      "type": "video/youtube"
+    },
+    {
+      "id": 62,
+      "videoId": "0awA5Uw6SJE",
+      "bucket": "Redux Toolkit",
+      "timestamp": 1673538337504,
+      "title": "Intro to Redux",
+      "link": "https://www.youtube-nocookie.com/embed/0awA5Uw6SJE",
+      "type": "video/youtube"
+    },
+    {
+      "id": 55,
+      "videoId": "ZySFOgejw0k",
+      "bucket": "Redux Toolkit",
+      "timestamp": 1620000000,
+      "title": "Getting Started",
+      "link": "https://www.youtube-nocookie.com/embed/ZySFOgejw0k",
+      "type": "video/youtube"
+    },
+    {
+      "id": 49,
+      "videoId": "QCRpVw2KXf8",
+      "bucket": "Namaste JS",
+      "timestamp": 1620000000,
+      "title": "Shortest JS code | window & this keyword",
+      "link": "https://www.youtube-nocookie.com/embed/QCRpVw2KXf8",
+      "type": "video/youtube"
+    }
+  ]
 }

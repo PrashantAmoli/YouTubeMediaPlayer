@@ -1,24 +1,25 @@
 import Bucket from '../components/views/Bucket';
 import { useState, useEffect } from 'react';
+import { getBuckets, deleteBucket } from '../components/forms/functions';
+import { useSelector, useDispatch } from 'react-redux';
+import { setBuckets } from '../redux/counter';
 
 export default function Explore() {
-	const [buckets, setBuckets] = useState([]);
+	const buckets = useSelector(state => state.counter.buckets);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
-		async function getBuckets() {
-			const response = await fetch('http://localhost:3000/_buckets/');
-			const data = await response.json();
-			console.log(data);
-			setBuckets(data);
-			return data;
-		}
-		getBuckets();
+		(async function () {
+			if (buckets.length > 0) return;
+			const data = await getBuckets();
+			dispatch(setBuckets(data));
+		})();
 	}, []);
 
 	return (
 		<div className="sm:p-4">
 			{buckets.map((bucket, index) => {
-				return <Bucket key={index} bucket={bucket.name} />;
+				return <Bucket key={index} bucket={bucket} />;
 			})}
 		</div>
 	);

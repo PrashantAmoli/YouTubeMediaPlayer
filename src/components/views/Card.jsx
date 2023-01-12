@@ -1,15 +1,19 @@
 import { TrashIcon } from '@heroicons/react/24/outline';
 import { deleteVideoCard, getDateTime } from '../forms/functions';
+import { useSelector, useDispatch } from 'react-redux';
+import { openModal, closeModal } from '../../redux/counter';
 
 export default function Card({ data }) {
+	const modalOpen = useSelector(state => state.counter.modalOpen);
+	const dispatch = useDispatch();
+
 	const handleDelete = async () => {
 		await deleteVideoCard(data.id);
 	};
 
 	const handleClick = () => {
 		console.log('Card Clicked: show moadal with video');
-		// setModalOpen(true);
-		// return <MyModal open={modalOpen} setModalOpen={setModalOpen} data={data} />;
+		dispatch(openModal(data));
 	};
 	return (
 		<div

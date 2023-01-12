@@ -5,6 +5,7 @@ import Explore from './pages/Explore';
 import History from './pages/History';
 import Customize from './pages/Customize';
 import Search from './pages/Search';
+import MyModal from './components/views/MyModal';
 
 function App() {
 	return (
@@ -17,6 +18,8 @@ function App() {
 				<Route path="/history" element={<History />} />
 				<Route path="/customize" element={<Customize />} />
 			</Routes>
+
+			<MyModal />
 		</div>
 	);
 }

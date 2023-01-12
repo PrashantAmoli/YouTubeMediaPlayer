@@ -1,15 +1,18 @@
 import { createBucket, addVideo, getBuckets } from './functions';
 import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setBuckets, updateBuckets } from '../../redux/counter';
 
 export default function AddVideo() {
-	const [buckets, setBuckets] = useState([]);
+	const buckets = useSelector(state => state.counter.buckets);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
-		async function updateBuckets() {
+		(async function () {
+			if (buckets.length > 0) return;
 			const data = await getBuckets();
 			setBuckets(data);
-		}
-		updateBuckets();
+		})();
 	}, []);
 
 	const addNewVideo = async e => {
@@ -43,7 +46,8 @@ export default function AddVideo() {
 		e.preventDefault();
 		try {
 			const bucketName = e.target['new-bucket'].value;
-			return createBucket(bucketName);
+			const data = await createBucket(bucketName);
+			updateBuckets(data);
 		} catch (err) {
 			console.log(err);
 		}

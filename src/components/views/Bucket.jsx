@@ -1,11 +1,13 @@
 import Card from './Card';
 import { useState, useEffect, useRef } from 'react';
-import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
-import { getBucketVideos } from '../forms/functions';
+import { ArrowLeftIcon, ArrowRightIcon, TrashIcon } from '@heroicons/react/24/outline';
+import { getBucketVideos, deleteBucket } from '../forms/functions';
+import { useSelector, useDispatch } from 'react-redux';
 
 export default function Bucket({ bucket }) {
 	const [bucketData, setBucketData] = useState([]);
-	const [bucketName, setBucketName] = useState('Namaste_JS');
+	const [bucketName, setBucketName] = useState('Namaste JS');
+
 	const ref = useRef();
 
 	useEffect(() => {
@@ -16,14 +18,20 @@ export default function Bucket({ bucket }) {
 		}
 
 		if (bucket) {
-			setBucketName(bucket);
-			getBucketData(bucket);
+			setBucketName(bucket.name);
+			getBucketData(bucket.name);
 		}
 	}, [bucket]);
 
 	// For smooth scrolling buttons
 	const scroll = scrollOffset => {
 		ref.current.scrollLeft += scrollOffset;
+	};
+
+	const handleDelete = async () => {
+		deleteBucket(bucket);
+
+		console.log('Delete');
 	};
 
 	return (
@@ -39,6 +47,8 @@ export default function Bucket({ bucket }) {
 						return <Card key={index} data={data} />;
 					})}
 			</div>
+
+			<TrashIcon className="btn-float right-2 top-4 hover:bg-red-600" onClick={handleDelete} />
 
 			<ArrowLeftIcon className="btn-float left-12 bottom-12 sm:bottom-36 " onClick={() => scroll(-220)} />
 			<ArrowRightIcon className="btn-float right-12 bottom-12 sm:bottom-36 " onClick={() => scroll(220)} />

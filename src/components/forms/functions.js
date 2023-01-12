@@ -8,6 +8,7 @@ export const getHistory = async () => {
 		const response = await fetch(`${import.meta.env.VITE_JSON_BASE_URL}/_history?_sort=timestamp&_order=desc`);
 		const data = await response.json();
 		return data;
+		console.log(data);
 	} catch (err) {
 		console.log(err);
 	}
@@ -90,11 +91,10 @@ export const createBucket = async bucketName => {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify({ id: Math.floor(10 + Math.random() * 90), name: bucketName, data: [] }),
+			body: JSON.stringify({ id: Math.floor(10 + Math.random() * 90), name: bucketName }),
 		});
 		const content = await res.json();
-		console.log(content);
-		return true;
+		return content;
 	} catch (err) {
 		console.log(err);
 		return false;
@@ -165,6 +165,28 @@ export const renameBucket = async (bucket, newName) => {
 		// move all the videos to the new bucket by renaming bucket
 		videos.forEach(async video => {
 			await moveToBucket(video, newName);
+		});
+	} catch (err) {
+		console.log(err);
+		return false;
+	}
+};
+
+export const deleteBucket = async bucket => {
+	try {
+		const res1 = await fetch(`${import.meta.env.VITE_JSON_BASE_URL}/_buckets/${bucket.id}`, {
+			method: 'DELETE',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		});
+
+		// fetch all the videos in the bucket
+		const videos = await getBucketVideos(bucket.name);
+
+		// move all the videos to the new bucket by renaming bucket
+		videos.forEach(async video => {
+			await deleteVideoCard(video.id);
 		});
 	} catch (err) {
 		console.log(err);
