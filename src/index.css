@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.flex-box {
+		@apply flex flex-col flex-wrap justify-start items-center gap-6 shadow-lg rounded-lg backdrop-blur-xl w-full py-6 sm:p-8;
+	}
+	.card {
+		background-color: theme('colors.white');
+		border-radius: theme('borderRadius.lg');
+		padding: theme('spacing.0');
+		box-shadow: theme('boxShadow.lg');
+	}
+	.card:hover {
+		box-shadow: theme('boxShadow.2xl');
+	}
+
+	.form-primary {
+		@apply flex flex-col justify-center items-center gap-8 shadow-xl rounded-lg backdrop-blur-xl w-11/12 sm:w-6/12 py-6 sm:p-8;
+	}
+
+	.label-primary {
+		@apply w-11/12 py-2 font-semibold text-gray-700 leading-snug select-none;
+	}
+
+	.input-primary {
+		@apply w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+	}
+
+	.btn-primary {
+		@apply py-2 px-6 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+	}
+	.btn-red {
+		@apply py-2 px-4 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75;
+	}
+	.btn-blue {
+		@apply inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2;
+	}
+	.btn-green {
+		@apply rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75;
+	}
+	.btn-float {
+		@apply absolute w-10 h-10 p-2 mx-2 bg-white hover:bg-slate-100 backdrop-blur-xl shadow-xl hover:shadow-2xl cursor-pointer rounded-3xl z-30;
+	}
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+	scrollbar-width: 6px;
+	scrollbar-color: #fffff2 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+	background: #ffffff;
+	border-radius: 20px;
+	border: 20px solid #efefef;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #f6e7f5;
+	border-radius: 20px;
+	border: 2px solid #ffff;
+}
