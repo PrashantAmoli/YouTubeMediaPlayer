@@ -5,6 +5,7 @@ import { getBucketVideos, deleteBucket } from '../forms/functions';
 import { useSelector, useDispatch } from 'react-redux';
 
 export default function Bucket({ bucket }) {
+	// TODO : Get the bucket videos from the redux store
 	const [bucketData, setBucketData] = useState([]);
 	const [bucketName, setBucketName] = useState('Namaste JS');
 
@@ -30,8 +31,8 @@ export default function Bucket({ bucket }) {
 
 	const handleDelete = async () => {
 		deleteBucket(bucket);
-
-		console.log('Delete');
+		// TODO : Delete the bucket from the redux store
+		// TODO : Delete the bucket videos from the redux store
 	};
 
 	return (

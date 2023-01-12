@@ -18,7 +18,7 @@ function Search() {
 
 	return (
 		<div className="flex flex-col justify-center items-center border-4 bg-video-player bg-fixed bg-contain bg-no-repeat bg-blend-darken">
-			<div className="relative flex gap-8 flex-wrap w-full justify-center justify-items-center items-center py-6 px-4 bg-transparent pt-28">
+			<div className="relative flex gap-8 flex-wrap w-full justify-center justify-items-center py-6 px-4 bg-transparent pt-28 min-h-screen">
 				{/* Search Bar */}
 				<div className="items-center justify-between w-11/12 sm:w-5/12  flex rounded-full shadow-xl p-2 mb-5 absolute z-30 top-4 backdrop-blur-lg">
 					<div>
@@ -38,6 +38,7 @@ function Search() {
 						type="text"
 						placeholder="Search"
 						value={query}
+						onKeyDown={e => e.key === 'Enter' && getSearchResults(e)}
 						onChange={e => setQuery(e.target.value)}
 					/>
 
