@@ -1,20 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Card from '../components/views/Card';
 import { searchVideos } from '../components/forms/functions';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateQuery, updateSearchResults } from '../redux/counter';
 
 function Search() {
-	const [results, setResults] = useState([]);
-	const [query, setQuery] = useState('');
+	const searchResults = useSelector(state => state.counter.searchResults);
+	const query = useSelector(state => state.counter.query);
+	const dispatch = useDispatch();
 
-	async function getSearchResults() {
-		console.log(query);
-		console.log(results);
-		const data = await searchVideos(query);
-		setResults(data);
-	}
 	useEffect(() => {
-		getSearchResults();
+		setTimeout(() => getSearchResults(), 3000);
 	}, []);
+
+	// Get search results
+	async function getSearchResults() {
+		const data = await searchVideos(query);
+		dispatch(updateSearchResults(data));
+	}
 
 	return (
 		<div className="flex flex-col justify-center items-center border-4 bg-video-player bg-fixed bg-contain bg-no-repeat bg-blend-darken">
@@ -38,8 +41,8 @@ function Search() {
 						type="text"
 						placeholder="Search"
 						value={query}
-						onKeyDown={e => e.key === 'Enter' && getSearchResults(e)}
-						onChange={e => setQuery(e.target.value)}
+						onKeyDown={e => e.key === 'Enter' && dispatch(updateQuery(e.target.value))}
+						onChange={e => dispatch(updateQuery(e.target.value))}
 					/>
 
 					<div className="bg-gray-600 p-2 hover:bg-blue-400 cursor-pointer mx-2 rounded-full" onClick={getSearchResults}>
@@ -52,8 +55,8 @@ function Search() {
 						</svg>
 					</div>
 				</div>
-				{results.length &&
-					results.map((data, index) => {
+				{searchResults.length &&
+					searchResults.map((data, index) => {
 						return <Card key={index} data={data} />;
 					})}
 			</div>

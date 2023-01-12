@@ -53,7 +53,7 @@ export const appSlice = createSlice({
 			state.buckets = [...action.payload, ...state.buckets.filter(item => item.id !== action.payload.id)];
 		},
 		updateSearchResults: (state, action) => {
-			state.searchResults = action.payload;
+			state.searchResults = [...action.payload];
 		},
 		setHistory: (state, action) => {
 			state.history = [...action.payload];
