@@ -19,7 +19,7 @@ export default function Card({ data }) {
 		dispatch(openModal(data));
 	};
 	return (
-		<div className="relative z-10 shadow-xl hover:drop-shadow-2xl w-96 h-80 rounded-lg hover:scale-105 overflow-hidden transition duration-150 ease-in-out">
+		<div className="relative z-10 shadow-xl hover:drop-shadow-2xl w-80 sm:w-96 h-80 rounded-lg hover:scale-105 overflow-hidden transition duration-150 ease-in-out">
 			<img
 				src={`https://img.youtube.com/vi/${data?.videoId || `t1nFAMws5FI`}/hqdefault.jpg`}
 				alt="Thumbnail of Video"
