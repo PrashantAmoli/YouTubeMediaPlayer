@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setBuckets, updateBuckets, updateVideos } from '../../redux/counter';
+import { setBuckets, updateBuckets, updateVideos, showBanner } from '../../redux/counter';
 import { createBucket, addVideo, getBuckets } from './functions';
 
 export default function AddVideo() {
@@ -25,7 +25,7 @@ export default function AddVideo() {
 			const videoId = link.includes('embed/') ? link.split('embed/')[1].split('?')[0] : link.split('be/')[1].split('&')[0];
 
 			if (!bucketName || !title || !link || !videoId || bucketName.length < 3 || title.length < 3 || videoId.length < 5)
-				return alert('Please fill all the fields properly!');
+				return dispatch(showBanner(`Failed to add ${title} video to ${bucketName} bucket! Please check your inputs`));
 
 			const body = {
 				id: Math.floor(10 + Math.random() * 900),
@@ -41,8 +41,10 @@ export default function AddVideo() {
 
 			// update redux store
 			dispatch(updateVideos(body));
+			dispatch(showBanner(`${body.title} video added successfully to ${body.bucket} bucket!`));
 			// e.target.reset();
 		} catch (err) {
+			dispatch(showBanner(`Failed to add ${body.title} video to ${body.bucket} bucket!`));
 			console.log(err);
 		}
 	};
@@ -54,7 +56,9 @@ export default function AddVideo() {
 			if (bucketName.length < 3) return alert('Bucket name should be atleast 3 characters long!');
 			const data = await createBucket(bucketName);
 			if (data.name) dispatch(updateBuckets(data)); // update redux store
+			dispatch(showBanner(`${body.bucket} bucket successfully create! Next step is to add videos`));
 		} catch (err) {
+			dispatch(showBanner(`${body.bucket} bucket creation failed!`));
 			console.log(err);
 		}
 	};

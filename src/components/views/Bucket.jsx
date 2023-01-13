@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { ArrowLeftIcon, ArrowRightIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { getBucketVideos, deleteBucket } from '../forms/functions';
 import { useSelector, useDispatch } from 'react-redux';
-import { setVideos, updateVideos, deleteBuckets } from '../../redux/counter';
+import { setVideos, updateVideos, deleteBuckets, showBanner } from '../../redux/counter';
 
 // * @prop bucket = {name: 'Namaste JS', id: 123}
 export default function Bucket({ bucket }) {
@@ -35,6 +35,7 @@ export default function Bucket({ bucket }) {
 		// TODO : Delete the bucket from the redux store
 		// TODO : Delete the bucket videos from the redux store
 		dispatch(deleteBuckets(bucket));
+		dispatch(showBanner(`${bucket.name} bucket deleted successfully!`));
 	};
 
 	return (

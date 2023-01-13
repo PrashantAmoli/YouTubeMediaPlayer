@@ -20,6 +20,8 @@ export const appSlice = createSlice({
 			bucket: '',
 			link: '',
 		},
+		bannerShow: true,
+		bannerMessage: 'Welcome to YouTube Media Player by @PrashantAmoli',
 		query: '',
 		videos: [],
 		buckets: [],
@@ -43,6 +45,14 @@ export const appSlice = createSlice({
 		closeModal: state => {
 			state.modalOpen = false;
 			state.modalData = modalDefaultData;
+		},
+		showBanner: (state, action) => {
+			state.bannerShow = true;
+			state.bannerMessage = action.payload;
+		},
+		hideBanner: state => {
+			state.bannerShow = false;
+			state.bannerMessage = 'Welcome to YouTube Media Player by @PrashantAmoli';
 		},
 		updateQuery: (state, action) => {
 			state.query = action.payload;
@@ -83,16 +93,24 @@ export const {
 	increment,
 	decrement,
 	incrementByAmount,
+	// Modal
 	openModal,
 	closeModal,
+	// Banner
+	showBanner,
+	hideBanner,
+	// Videos
 	setVideos,
 	updateVideos,
 	deleteVideos,
+	// Buckets
 	setBuckets,
 	deleteBuckets,
 	updateBuckets,
+	// History
 	setHistory,
 	updateHistory,
+	//  Search
 	updateSearchResults,
 	updateQuery,
 } = appSlice.actions;

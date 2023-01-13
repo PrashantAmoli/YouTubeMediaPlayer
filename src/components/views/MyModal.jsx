@@ -3,7 +3,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState, useRef } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { useSelector, useDispatch } from 'react-redux';
-import { openModal, closeModal, updateHistory, deleteVideos, updateVideos, updateBuckets } from '../../redux/counter';
+import { openModal, closeModal, updateHistory, deleteVideos, updateVideos, updateBuckets, showBanner } from '../../redux/counter';
 import { deleteVideoCard, renameBucket, moveToBucket } from '../forms/functions';
 
 export default function MyModal() {
@@ -36,6 +36,7 @@ export default function MyModal() {
 
 		setTimeout(() => {
 			dispatch(closeModal());
+			dispatch(showBanner(`${data.title} video deleted successfully from ${data.bucket} bucket!`));
 		}, 3000);
 	};
 
@@ -48,6 +49,7 @@ export default function MyModal() {
 		dispatch(updateVideos(data));
 		setTimeout(() => {
 			dispatch(closeModal());
+			dispatch(showBanner(`${data.title} video successfully moved from ${data.bucket} bucket to ${newName} bucket}`));
 		}, 3000);
 	};
 
@@ -61,6 +63,7 @@ export default function MyModal() {
 		dispatch(updateBuckets(data));
 		setTimeout(() => {
 			dispatch(closeModal());
+			dispatch(showBanner(`${data.bucket} bucket successfully renamed to ${newName} }`));
 		}, 3000);
 	};
 

@@ -1,6 +1,6 @@
 import { TrashIcon } from '@heroicons/react/24/outline';
 import { useSelector, useDispatch } from 'react-redux';
-import { openModal, closeModal, deleteVideos } from '../../redux/counter';
+import { openModal, closeModal, deleteVideos, showBanner } from '../../redux/counter';
 import { deleteVideoCard, getDateTime } from '../forms/functions';
 
 // * @prop data = {id, title, videoId, bucket, link, type}
@@ -11,6 +11,8 @@ export default function Card({ data }) {
 		await deleteVideoCard(data.id);
 		//  TODO : Delete the video from the redux store
 		dispatch(deleteVideos(data));
+		dispatch(closeModal());
+		dispatch(showBanner(`${data.title} video deleted successfully from ${data.bucket} bucket!`));
 	};
 
 	const handleClick = () => {
