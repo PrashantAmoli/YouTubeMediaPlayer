@@ -133,6 +133,46 @@
       "title": "Three Core Concepts",
       "link": "https://www.youtube-nocookie.com/embed/7cREd9mesMg",
       "type": "video/youtube"
+    },
+    {
+      "id": 17,
+      "bucket": "Redux Toolkit",
+      "videoId": "0awA5Uw6SJE",
+      "title": "Intro to Redux",
+      "link": "https://www.youtube-nocookie.com/embed/0awA5Uw6SJE",
+      "type": "video/youtube"
+    },
+    {
+      "id": 18,
+      "bucket": "Redux Toolkit",
+      "videoId": "ZySFOgejw0k",
+      "title": "Getting Started",
+      "link": "https://www.youtube-nocookie.com/embed/ZySFOgejw0k",
+      "type": "video/youtube"
+    },
+    {
+      "id": 19,
+      "bucket": "Redux Toolkit",
+      "videoId": "7cREd9mesMg",
+      "title": "Three Core Concepts",
+      "link": "https://www.youtube-nocookie.com/embed/7cREd9mesMg",
+      "type": "video/youtube"
+    },
+    {
+      "id": 651,
+      "bucket": "JSON Server",
+      "title": "14:47 Video ",
+      "link": "https://www.youtube-nocookie.com/embed/r0wP6bx_LkM",
+      "videoId": "r0wP6bx_LkM",
+      "type": "youtube/video"
+    },
+    {
+      "id": 76,
+      "bucket": "JSON Server",
+      "title": "14:50 PM Video",
+      "link": "https://www.youtube-nocookie.com/embed/r0wP6bx_LkM",
+      "videoId": "r0wP6bx_LkM",
+      "type": "youtube/video"
     }
   ],
   "_history": [

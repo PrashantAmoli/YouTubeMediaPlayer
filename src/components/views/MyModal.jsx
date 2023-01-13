@@ -3,7 +3,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState, useRef } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { useSelector, useDispatch } from 'react-redux';
-import { openModal, closeModal, updateHistory } from '../../redux/counter';
+import { openModal, closeModal, updateHistory, deleteVideos, updateVideos, updateBuckets } from '../../redux/counter';
 import { deleteVideoCard, renameBucket, moveToBucket } from '../forms/functions';
 
 export default function MyModal() {
@@ -12,12 +12,13 @@ export default function MyModal() {
 	const data = useSelector(state => state.counter.modalData);
 	const dispatch = useDispatch();
 
-	const [showOptions, setShowOptions] = useState(true);
+	const [showOptions, setShowOptions] = useState(false);
 	const [XY, setXY] = useState({ x: 500, y: 300 });
 
 	const frameRef = useRef(null);
 
 	const handleClose = async () => {
+		// update history onClose
 		const historyData = {
 			...data,
 			timestamp: Date.now(),
@@ -26,25 +27,41 @@ export default function MyModal() {
 		dispatch(closeModal());
 	};
 
-	const handleDelete = async () => {
+	const handleDelete = async e => {
 		e.preventDefault();
+		// update database
 		await deleteVideoCard(data.id);
-		dispatch(closeModal());
+		// TODO : Delete the video from the redux store
+		dispatch(deleteVideos(data));
+
+		setTimeout(() => {
+			dispatch(closeModal());
+		}, 3000);
 	};
 
 	const handleMove = async e => {
 		e.preventDefault();
 		const newName = e.target['bucket'].value;
+		// update database
 		await moveToBucket(data, newName);
-		dispatch(closeModal());
+		// TODO : Update the video from the redux store
+		dispatch(updateVideos(data));
+		setTimeout(() => {
+			dispatch(closeModal());
+		}, 3000);
 	};
 
 	const handleBucketRename = async e => {
 		e.preventDefault();
 		const newName = e.target['newName'].value;
 		const oldBucket = buckets?.filter(bucket => bucket.name === data.bucket)[0];
+		// update the bucket name in the database
 		await renameBucket(oldBucket, newName);
-		dispatch(closeModal());
+		// TODO : Update the video from the redux store
+		dispatch(updateBuckets(data));
+		setTimeout(() => {
+			dispatch(closeModal());
+		}, 3000);
 	};
 
 	// * IMPORTANT: This is the function that resizes the iframe in modal
@@ -128,16 +145,16 @@ export default function MyModal() {
 											<form className="flex flex-row justify-center gap-6 w-full md:w-7/12 my-4" onSubmit={handleMove}>
 												{buckets && (
 													<select className="input-primary" name="bucket" id="bucket" required>
+														<option key={99999} value={null} defaultValue disabled selected>
+															Move to Bucket
+														</option>
 														{buckets.map((bucket, index) => {
 															return (
 																<option key={index} value={bucket.name}>
-																	{index + '.  ' + bucket.name}
+																	{bucket.name}
 																</option>
 															);
 														})}
-														<option key={99999} value={null} defaultValue disabled>
-															Move to Bucket
-														</option>
 													</select>
 												)}
 												<button className="btn-red" type="submit">

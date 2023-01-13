@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
 import Card from '../components/views/Card';
 import { getHistory } from '../components/forms/functions';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { setHistory } from '../redux/counter';
 
 export default function History() {
 	const history = useSelector(state => state.counter.history);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
-		(async function () {
-			if (!history || history.length > 0) return;
-			console.log('Fetching history');
-			const data = await getHistory();
-			setHistory(data);
-		})();
+		if (!history || history?.length === 0)
+			(async function () {
+				const data = await getHistory();
+				// set history in redux store
+				dispatch(setHistory(data));
+			})();
 	}, []);
 
 	return (

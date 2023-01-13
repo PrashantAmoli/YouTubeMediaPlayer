@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
-import MyModal from './views/MyModal';
+
+// * Component Source: https://tailwindui.com/components/
 
 const navigation = [
 	{ name: 'Home', href: '/' },
@@ -14,7 +15,6 @@ const navigation = [
 
 export default function Navbar() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-	const [modalOpen, setModalOpen] = useState(false);
 
 	return (
 		<div className="isolate bg-white">
@@ -38,7 +38,7 @@ export default function Navbar() {
 					</defs>
 				</svg>
 			</div>
-			<div className="px-6 py-4 lg:px-8 z-10 shadow-md hover:shadow-lg">
+			<div className="px-6 py-4 lg:px-8 z-50 shadow-md hover:shadow-lg">
 				<div>
 					<nav className="flex h-9 items-center justify-between" aria-label="Global">
 						<div className="flex lg:min-w-0 lg:flex-1 cursor-pointer" aria-label="Global">
@@ -80,7 +80,7 @@ export default function Navbar() {
 
 					{/* Mobile Responsive Menu : source:tailwindui.com/components/ */}
 					<Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-						<Dialog.Panel focus="true" className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
+						<Dialog.Panel focus="true" className="fixed inset-0 z-40 overflow-y-auto bg-white px-6 py-6 lg:hidden">
 							<div className="flex h-9 items-center justify-between">
 								<div className="flex">
 									<a href="#" className="-m-1.5 p-1.5">
@@ -123,10 +123,6 @@ export default function Navbar() {
 					</Dialog>
 				</div>
 			</div>
-
-			{/* Modal Code */}
-
-			{/* <MyModal open={modalOpen} setModalOpen={setModalOpen} /> */}
 		</div>
 	);
 }

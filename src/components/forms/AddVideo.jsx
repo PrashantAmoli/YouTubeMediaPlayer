@@ -1,17 +1,18 @@
-import { createBucket, addVideo, getBuckets } from './functions';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setBuckets, updateBuckets } from '../../redux/counter';
+import { setBuckets, updateBuckets, updateVideos } from '../../redux/counter';
+import { createBucket, addVideo, getBuckets } from './functions';
 
 export default function AddVideo() {
 	const buckets = useSelector(state => state.counter.buckets);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
+		// Update buckets in store on load if empty
 		(async function () {
 			if (buckets.length > 0) return;
 			const data = await getBuckets();
-			setBuckets(data);
+			dispatch(setBuckets(data));
 		})();
 	}, []);
 
@@ -35,7 +36,11 @@ export default function AddVideo() {
 				type: `youtube/video`,
 			};
 
+			// add video to bucket
 			await addVideo(body);
+
+			// update redux store
+			dispatch(updateVideos(body));
 			// e.target.reset();
 		} catch (err) {
 			console.log(err);
@@ -46,8 +51,9 @@ export default function AddVideo() {
 		e.preventDefault();
 		try {
 			const bucketName = e.target['new-bucket'].value;
+			if (bucketName.length < 3) return alert('Bucket name should be atleast 3 characters long!');
 			const data = await createBucket(bucketName);
-			updateBuckets(data);
+			if (data.name) dispatch(updateBuckets(data)); // update redux store
 		} catch (err) {
 			console.log(err);
 		}

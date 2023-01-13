@@ -21,6 +21,7 @@ export const appSlice = createSlice({
 			link: '',
 		},
 		query: '',
+		videos: [],
 		buckets: [],
 		history: [],
 		searchResults: [],
@@ -46,17 +47,30 @@ export const appSlice = createSlice({
 		updateQuery: (state, action) => {
 			state.query = action.payload;
 		},
+		setVideos: (state, action) => {
+			state.videos = [...action.payload, ...state.videos];
+		},
+		updateVideos: (state, action) => {
+			state.videos = [action.payload, ...state.videos?.filter(item => item.id !== action.payload.id)];
+		},
+		deleteVideos: (state, action) => {
+			state.videos = [...state.videos.filter(item => item.id !== action.payload.id)];
+		},
 		setBuckets: (state, action) => {
 			state.buckets = [...action.payload];
 		},
 		updateBuckets: (state, action) => {
 			state.buckets = [...action.payload, ...state.buckets.filter(item => item.id !== action.payload.id)];
 		},
+		deleteBuckets: (state, action) => {
+			state.videos = [...state.videos.filter(item => item.bucket !== action.payload.name)];
+			state.buckets = [...state.buckets.filter(item => item.id !== action.payload.id)];
+		},
 		updateSearchResults: (state, action) => {
 			state.searchResults = [...action.payload];
 		},
 		setHistory: (state, action) => {
-			state.history = [...action.payload];
+			state.history = [...action.payload, ...state.history];
 		},
 		updateHistory: (state, action) => {
 			state.history = [action.payload, ...state.history.filter(item => item.id !== action.payload.id)];
@@ -71,7 +85,11 @@ export const {
 	incrementByAmount,
 	openModal,
 	closeModal,
+	setVideos,
+	updateVideos,
+	deleteVideos,
 	setBuckets,
+	deleteBuckets,
 	updateBuckets,
 	setHistory,
 	updateHistory,
